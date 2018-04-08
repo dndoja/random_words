@@ -35,6 +35,17 @@ void main() {
     expect(d.asUpperCase, "HUGE");
   });
 
+  test('WordAdjective provides Capitalized', () {
+    final a = new WordAdjective("clEar");
+    final b = new WordAdjective("big");
+    final c = new WordAdjective("fRance");
+    final d = new WordAdjective("hugE");
+    expect(a.asCapitalized, "Clear");
+    expect(b.asCapitalized, "Big");
+    expect(c.asCapitalized, "France");
+    expect(d.asCapitalized, "Huge");
+  });
+
   test('WordAdjective.random returns normally', () {
     expect(() => new WordAdjective.random(), returnsNormally);
   });

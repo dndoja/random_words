@@ -91,6 +91,8 @@ class WordAdjective {
 
   String _asString;
 
+  String _asCapitalized;
+
   /// Create a [WordAdjective] from the strings [word].
   WordAdjective(this.word) {
     if (word == null) {
@@ -135,6 +137,10 @@ class WordAdjective {
   /// or `"military"`.
   String get asString => _asString ??= '$word';
 
+  /// Returns the noun as a capitalized string, like `"Political"`
+  /// or `"Military"`.
+  String get asCapitalized => _asCapitalized ??= _capitalize(word);
+
   @override
   int get hashCode => asString.hashCode;
 
@@ -149,4 +155,8 @@ class WordAdjective {
 
   @override
   String toString() => asString;
+
+  String _capitalize(String word) {
+    return "${word[0].toUpperCase()}${word.substring(1).toLowerCase()}";
+  }
 }

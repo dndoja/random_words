@@ -91,6 +91,8 @@ class WordNoun {
 
   String _asString;
 
+  String _asCapitalized;
+
   /// Create a [WordNoun] from the strings [word].
   WordNoun(this.word) {
     if (word == null) {
@@ -135,6 +137,10 @@ class WordNoun {
   /// or `"chicken"`.
   String get asString => _asString ??= '$word';
 
+  /// Returns the noun as a capitalized string, like `"Football"`
+  /// or `"Chicken"`.
+  String get asCapitalized => _asCapitalized ??= _capitalize(word);
+
   @override
   int get hashCode => asString.hashCode;
 
@@ -149,4 +155,8 @@ class WordNoun {
 
   @override
   String toString() => asString;
+
+  String _capitalize(String word) {
+    return "${word[0].toUpperCase()}${word.substring(1).toLowerCase()}";
+  }
 }

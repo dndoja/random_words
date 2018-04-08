@@ -35,6 +35,17 @@ void main() {
     expect(d.asUpperCase, "PLATE");
   });
 
+  test('WordNoun provides Capitalized', () {
+    final a = new WordNoun("tApe");
+    final b = new WordNoun("footBall");
+    final c = new WordNoun("coLLeague");
+    final d = new WordNoun("Plate");
+    expect(a.asCapitalized, "Tape");
+    expect(b.asCapitalized, "Football");
+    expect(c.asCapitalized, "Colleague");
+    expect(d.asCapitalized, "Plate");
+  });
+
   test('WordNoun.random returns normally', () {
     expect(() => new WordNoun.random(), returnsNormally);
   });
