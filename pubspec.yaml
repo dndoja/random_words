@@ -1,11 +1,13 @@
-name: english_words
+name: random_words
 description: >
-  Utilities for working with English words. Counts syllables, generates
-  well-sounding word combinations, and provides access to the top 5000 English
-  words by usage.
-version: 3.1.0
-author: Filip Hracek <filip.hracek@gmail.com>
-homepage: https://github.com/filiph/english_words
+  Utilities for generating random English words. It gives the option to retrieve
+  random Nouns and Adjectives along with WordPairs. It is based off of Filip Hracek's
+  english_words plugin
+version: 1.0.0
+authors:
+- Nathan Glover <nathan@glovers.id.au>
+- Filip Hracek <filip.hracek@gmail.com>
+homepage: https://github.com/t04glovern/random_words
 
 environment:
   sdk: '>=1.22.0 <2.0.0'

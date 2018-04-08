@@ -1,10 +1,10 @@
 // Copyright (c) 2017, filiph. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'package:english_words/src/syllables/disyllabic.dart';
-import 'package:english_words/src/syllables/monosyllabic.dart';
-import 'package:english_words/src/syllables/problematic.dart';
-import 'package:english_words/src/syllables/trisyllabic.dart';
+import 'package:random_words/src/syllables/disyllabic.dart';
+import 'package:random_words/src/syllables/monosyllabic.dart';
+import 'package:random_words/src/syllables/problematic.dart';
+import 'package:random_words/src/syllables/trisyllabic.dart';
 import 'package:string_scanner/string_scanner.dart';
 
 final RegExp _allCaps = new RegExp(r'^[A-Z]+$');

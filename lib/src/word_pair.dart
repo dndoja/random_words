@@ -1,11 +1,11 @@
 import 'dart:math';
 
-import 'package:english_words/src/syllables.dart';
-import 'package:english_words/src/words/adjectives.dart';
-import 'package:english_words/src/words/adjectives_monosyllabic_safe.dart';
-import 'package:english_words/src/words/nouns.dart';
-import 'package:english_words/src/words/nouns_monosyllabic_safe.dart';
-import 'package:english_words/src/words/unsafe.dart';
+import 'package:random_words/src/syllables.dart';
+import 'package:random_words/src/words/adjectives.dart';
+import 'package:random_words/src/words/adjectives_monosyllabic_safe.dart';
+import 'package:random_words/src/words/nouns.dart';
+import 'package:random_words/src/words/nouns_monosyllabic_safe.dart';
+import 'package:random_words/src/words/unsafe.dart';
 
 /// The default value of the `maxSyllables` parameter of the [generateWordPairs]
 /// function.

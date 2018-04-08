@@ -1,5 +1,5 @@
-import 'package:english_words/english_words.dart';
-import 'package:english_words/src/words/unsafe.dart';
+import 'package:random_words/random_words.dart';
+import 'package:random_words/src/words/unsafe.dart';
 
 /// Builder for the `lib/src/words/*_monosyllabic_safe` lists.
 void main() {
