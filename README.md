@@ -1,6 +1,7 @@
 # random_words
 
 [![Build status](https://travis-ci.org/t04glovern/random_words.svg)](https://travis-ci.org/t04glovern/random_words)
+[![pub package](https://img.shields.io/pub/v/random_words.svg)](https://pub.dartlang.org/packages/random_words)
 
 Utilities for generating random English words. It gives the option to
 retrieve random Nouns and Adjectives along with WordPairs. It is based
