@@ -9,7 +9,7 @@ authors:
 homepage: https://github.com/t04glovern/random_words
 
 environment:
-  sdk: '>=1.22.0 <2.0.0'
+  sdk: '>=1.22.0 <2.1.0'
 
 dependencies:
   string_scanner: ^1.0.1
