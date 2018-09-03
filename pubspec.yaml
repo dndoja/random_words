@@ -3,17 +3,17 @@ description: >
   Utilities for generating random English words. It gives the option to retrieve
   random Nouns and Adjectives along with WordPairs. It is based off of Filip Hracek's
   english_words plugin
-version: 1.0.1
+version: 1.0.2
 authors:
 - Nathan Glover <nathan@glovers.id.au>
 homepage: https://github.com/t04glovern/random_words
 
 environment:
-  sdk: '>=1.22.0 <2.0.0'
+  sdk: '>=1.22.0 <3.0.0'
 
 dependencies:
   string_scanner: ^1.0.1
 
 dev_dependencies:
   benchmark_harness: ^1.0.4
-  test: '>=0.12.20 <0.13.0'
+  test: ^1.0.0
