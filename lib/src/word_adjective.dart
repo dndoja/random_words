@@ -34,7 +34,8 @@ final _random = new Random();
 ///
 /// You can inject [Random] using the [random] parameter.
 Iterable<WordAdjective> generateAdjective(
-    {int maxSyllables: adjectiveMaxSyllablesDefault,
+    {int wordLength: -1,
+    int maxSyllables: adjectiveMaxSyllablesDefault,
     int top: adjectiveTopDefault,
     bool safeOnly: adjectiveSafeOnlyDefault,
     Random random}) sync* {
@@ -42,13 +43,15 @@ Iterable<WordAdjective> generateAdjective(
 
   bool filterWord(String word) {
     if (safeOnly && unsafe.contains(word)) return false;
-    return syllables(word) <= maxSyllables - 1;
+    return (wordLength == -1 || wordLength == word.length) &&
+        syllables(word) <= maxSyllables - 1;
   }
 
   List<String> shortAdjectives;
   if (maxSyllables == adjectiveMaxSyllablesDefault &&
       top == adjectiveTopDefault &&
-      safeOnly == adjectiveSafeOnlyDefault) {
+      safeOnly == adjectiveSafeOnlyDefault &&
+      wordLength == -1) {
     // The most common, precomputed case.
     shortAdjectives = adjectivesMonosyllabicSafe;
   } else {

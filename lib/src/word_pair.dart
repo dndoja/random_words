@@ -39,7 +39,8 @@ final _random = new Random();
 ///
 /// You can inject [Random] using the [random] parameter.
 Iterable<WordPair> generateWordPairs(
-    {int maxSyllables: maxSyllablesDefault,
+    {int wordLength: -1,
+    int maxSyllables: maxSyllablesDefault,
     int top: topDefault,
     bool safeOnly: safeOnlyDefault,
     Random random}) sync* {
@@ -47,14 +48,16 @@ Iterable<WordPair> generateWordPairs(
 
   bool filterWord(String word) {
     if (safeOnly && unsafe.contains(word)) return false;
-    return syllables(word) <= maxSyllables - 1;
+    return (wordLength == -1 || word.length == wordLength) &&
+        syllables(word) <= maxSyllables - 1;
   }
 
   List<String> shortAdjectives;
   List<String> shortNouns;
   if (maxSyllables == maxSyllablesDefault &&
       top == topDefault &&
-      safeOnly == safeOnlyDefault) {
+      safeOnly == safeOnlyDefault &&
+      wordLength == -1) {
     // The most common, precomputed case.
     shortAdjectives = adjectivesMonosyllabicSafe;
     shortNouns = nounsMonosyllabicSafe;

@@ -5,6 +5,8 @@ import 'package:random_words/src/words/nouns.dart';
 import 'package:random_words/src/words/nouns_monosyllabic_safe.dart';
 import 'package:random_words/src/words/unsafe.dart';
 
+import '../random_words.dart';
+
 /// The default value of the `maxSyllables` parameter of the [generateNoun]
 /// function.
 const int nounMaxSyllablesDefault = 2;
@@ -34,7 +36,8 @@ final _random = new Random();
 ///
 /// You can inject [Random] using the [random] parameter.
 Iterable<WordNoun> generateNoun(
-    {int maxSyllables: nounMaxSyllablesDefault,
+    {int wordLength: -1,
+    int maxSyllables: nounMaxSyllablesDefault,
     int top: nounTopDefault,
     bool safeOnly: nounSafeOnlyDefault,
     Random random}) sync* {
@@ -42,18 +45,19 @@ Iterable<WordNoun> generateNoun(
 
   bool filterWord(String word) {
     if (safeOnly && unsafe.contains(word)) return false;
-    return syllables(word) <= maxSyllables - 1;
+    return (wordLength == -1 || wordLength == word.length) &&
+        syllables(word) <= maxSyllables - 1;
   }
 
   List<String> shortNouns;
   if (maxSyllables == nounMaxSyllablesDefault &&
       top == nounTopDefault &&
-      safeOnly == nounSafeOnlyDefault) {
+      safeOnly == nounSafeOnlyDefault &&
+      wordLength == -1) {
     // The most common, precomputed case.
     shortNouns = nounsMonosyllabicSafe;
   } else {
-    shortNouns =
-        nouns.where(filterWord).take(top).toList(growable: false);
+    shortNouns = nouns.where(filterWord).take(top).toList(growable: false);
   }
 
   String pickRandom(List<String> list) => list[random.nextInt(list.length)];
